@@ -1,0 +1,14 @@
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\RealtimeWriter\bin\Debug\RealTimeWriter.exe.config
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\RealtimeWriter\bin\Debug\RealTimeWriter.exe
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\RealtimeWriter\bin\Debug\RealTimeWriter.pdb
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\RealtimeWriter\bin\Debug\Implementations.dll
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\RealtimeWriter\bin\Debug\Interfaces.dll
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\RealtimeWriter\bin\Debug\Implementations.pdb
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\RealtimeWriter\bin\Debug\Interfaces.pdb
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\RealtimeWriter\obj\Debug\RealtimeWriter.csprojResolveAssemblyReference.cache
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\RealtimeWriter\obj\Debug\RealTimeWriter.WriterForm.resources
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\RealtimeWriter\obj\Debug\RealTimeWriter.Properties.Resources.resources
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\RealtimeWriter\obj\Debug\RealtimeWriter.csproj.GenerateResource.Cache
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\RealtimeWriter\obj\Debug\RealtimeWriter.csproj.CoreCompileInputs.cache
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\RealtimeWriter\obj\Debug\RealTimeWriter.exe
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\RealtimeWriter\obj\Debug\RealTimeWriter.pdb

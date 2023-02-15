@@ -1,0 +1,8 @@
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\Implementations\bin\Debug\Implementations.dll
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\Implementations\bin\Debug\Implementations.pdb
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\Implementations\bin\Debug\Interfaces.dll
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\Implementations\bin\Debug\Interfaces.pdb
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\Implementations\obj\Debug\Implementations.csprojResolveAssemblyReference.cache
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\Implementations\obj\Debug\Implementations.csproj.CoreCompileInputs.cache
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\Implementations\obj\Debug\Implementations.dll
+D:\Perforce\dutz_C1200460-00_dutz_stream10_1618\Source\Tools\ReaderWriter\Implementations\obj\Debug\Implementations.pdb

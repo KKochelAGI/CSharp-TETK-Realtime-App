@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<RealtimeReader xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<EphemerisData>
+	<Format>EphemerisMSLLLATimePos</Format>
+		<ColumnCollection>
+			<Column>
+				<Name>Time</Name>
+				<Mapping>PositionTime</Mapping>
+				<Index>0</Index>
+			</Column>
+			<Column>
+				<Name>Latitude</Name>
+				<Mapping>X</Mapping>
+				<Index>3</Index>
+			</Column>
+			<Column>
+				<Name>Longitude</Name>
+				<Mapping>Y</Mapping>
+				<Index>4</Index>
+			</Column>
+			<Column>
+				<Name>Altitude</Name>
+				<Mapping>Z</Mapping>
+				<Index>5</Index>
+				<Multiplier>1000</Multiplier>
+			</Column>
+		</ColumnCollection>
+</EphemerisData>
+<AttitudeData>
+	<Format>AttitudeTimeEulerAngles</Format>
+	<ColumnCollection>
+		<Column>
+			<Name>Yaw</Name>
+			<Mapping>Yaw</Mapping>
+			<Index>18</Index>
+			<Multiplier>0.0174533</Multiplier>
+		</Column>
+		<Column>
+			<Name>Pitch</Name>
+			<Mapping>Pitch</Mapping>
+			<Index>16</Index>
+			<Multiplier>0.0174533</Multiplier>
+		</Column>
+		<Column>
+			<Name>Roll</Name>
+			<Mapping>Roll</Mapping>
+			<Index>17</Index>
+			<Multiplier>0.0174533</Multiplier>
+		</Column>
+	</ColumnCollection>
+</AttitudeData>
+<GraphCollection>
+	<Graph>
+		<GraphName>Graph</GraphName>
+		<Column>
+			<Name>LatRate</Name>
+			<Dimension>AngleRate</Dimension>
+			<Index>6</Index>
+			<Multiplier>0.0174533</Multiplier>
+		</Column>
+	</Graph>
+</GraphCollection>
+<DataDisplayCollection>
+	<DataDisplay>
+		<DisplayName>DataDisplay</DisplayName>
+		<Column>
+			<Name>AltRate</Name>
+			<Dimension>Rate</Dimension>
+			<Unit>m/sec</Unit>
+			<Index>7</Index>
+			<Multiplier>1000</Multiplier>
+		</Column>
+	</DataDisplay>
+</DataDisplayCollection>
+<MetricCollection>
+	<Metric>
+		<MetricName>XX</MetricName>
+		<Column>
+			<Name>XX</Name>
+			<Dimension>Area</Dimension>
+			<Index>9</Index>
+			<Multiplier>0.0929</Multiplier>
+		</Column>
+	</Metric>
+</MetricCollection>
+</RealtimeReader>
