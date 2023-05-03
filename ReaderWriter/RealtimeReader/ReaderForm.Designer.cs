@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbUpdate = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnBrowseColumnData = new System.Windows.Forms.Button();
             this.tbColumnData = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -61,7 +63,7 @@
             this.btnBrowseSave = new System.Windows.Forms.Button();
             this.tbSave = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -109,6 +111,7 @@
             this.tbInput.Size = new System.Drawing.Size(450, 20);
             this.tbInput.TabIndex = 3;
             this.tbInput.Text = "D:\\Realtime\\TE_Scenario\\Firebird_2.sc";
+            this.tbInput.MouseHover += new System.EventHandler(this.tbInput_MouseHover);
             // 
             // btnScenarioBrowse
             // 
@@ -161,6 +164,7 @@
             this.tbData.Size = new System.Drawing.Size(450, 20);
             this.tbData.TabIndex = 8;
             this.tbData.Text = "D:\\RealTime\\s4586-tetk-tool-2.1.0-SNAPSHOT\\data\\output.csv";
+            this.tbData.MouseHover += new System.EventHandler(this.tbData_MouseHover);
             // 
             // btnInput
             // 
@@ -207,6 +211,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Scenario Setup";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(10, 68);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Data Definitions";
+            // 
             // btnBrowseColumnData
             // 
             this.btnBrowseColumnData.Location = new System.Drawing.Point(469, 83);
@@ -224,6 +237,7 @@
             this.tbColumnData.Size = new System.Drawing.Size(450, 20);
             this.tbColumnData.TabIndex = 9;
             this.tbColumnData.Text = "D:\\Realtime\\Writer\\XF1_ColumnData.xml";
+            this.tbColumnData.MouseHover += new System.EventHandler(this.tbColumnData_MouseHover);
             // 
             // groupBox6
             // 
@@ -411,6 +425,7 @@
             this.tbSave.Size = new System.Drawing.Size(450, 20);
             this.tbSave.TabIndex = 1;
             this.tbSave.Text = "D:\\Realtime\\Archive\\Firebird.sc";
+            this.tbSave.MouseHover += new System.EventHandler(this.tbSave_MouseHover);
             // 
             // label4
             // 
@@ -421,23 +436,15 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Scenario directory";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 68);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Data Definitions";
-            // 
             // ReaderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 657);
+            this.ClientSize = new System.Drawing.Size(574, 646);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MinimumSize = new System.Drawing.Size(590, 685);
             this.Name = "ReaderForm";
             this.Text = "Realtime Reader";
             this.groupBox1.ResumeLayout(false);
@@ -490,6 +497,7 @@
         private System.Windows.Forms.Button btnBrowseColumnData;
         private System.Windows.Forms.TextBox tbColumnData;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

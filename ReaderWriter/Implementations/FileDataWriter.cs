@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Threading;
+using System.Windows.Forms;
 using Interfaces;
 
 namespace Implementations
@@ -72,6 +73,7 @@ namespace Implementations
             catch (Exception ex)
             {
                 _read.Close();
+                MessageBox.Show(ex.ToString());
                 throw new ApplicationException("Exception occurred in FileDataWriter.WriteData", ex);
             }
         }

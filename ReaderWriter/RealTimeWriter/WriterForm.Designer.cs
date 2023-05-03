@@ -13,6 +13,7 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
+            DisposeComponents();
             if (disposing && (components != null))
             {
                 components.Dispose();
@@ -28,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -37,6 +39,7 @@
             this.tbOutput = new System.Windows.Forms.TextBox();
             this.btnInput = new System.Windows.Forms.Button();
             this.btnOutput = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -79,11 +82,14 @@
             // 
             // tbInput
             // 
+            this.tbInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbInput.Location = new System.Drawing.Point(72, 135);
             this.tbInput.Name = "tbInput";
-            this.tbInput.Size = new System.Drawing.Size(323, 20);
+            this.tbInput.Size = new System.Drawing.Size(368, 20);
             this.tbInput.TabIndex = 4;
-            this.tbInput.Text = "D:\\RealTime\\Shook\\ReaderWriter\\ReaderWriter\\XF1_0123.csv";
+            this.tbInput.Text = "*File_to_read_from*";
+            this.tbInput.MouseHover += new System.EventHandler(this.tbInput_Hover);
             // 
             // label3
             // 
@@ -96,15 +102,18 @@
             // 
             // tbOutput
             // 
+            this.tbOutput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbOutput.Location = new System.Drawing.Point(72, 169);
             this.tbOutput.Name = "tbOutput";
-            this.tbOutput.Size = new System.Drawing.Size(323, 20);
+            this.tbOutput.Size = new System.Drawing.Size(368, 20);
             this.tbOutput.TabIndex = 6;
-            this.tbOutput.Text = "D:\\RealTime\\Data.csv";
+            this.tbOutput.Text = "*File_to_write_to*";
             // 
             // btnInput
             // 
-            this.btnInput.Location = new System.Drawing.Point(401, 133);
+            this.btnInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInput.Location = new System.Drawing.Point(446, 133);
             this.btnInput.Name = "btnInput";
             this.btnInput.Size = new System.Drawing.Size(26, 23);
             this.btnInput.TabIndex = 7;
@@ -114,7 +123,8 @@
             // 
             // btnOutput
             // 
-            this.btnOutput.Location = new System.Drawing.Point(401, 166);
+            this.btnOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOutput.Location = new System.Drawing.Point(446, 166);
             this.btnOutput.Name = "btnOutput";
             this.btnOutput.Size = new System.Drawing.Size(26, 23);
             this.btnOutput.TabIndex = 8;
@@ -126,7 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 219);
+            this.ClientSize = new System.Drawing.Size(484, 221);
             this.Controls.Add(this.btnOutput);
             this.Controls.Add(this.btnInput);
             this.Controls.Add(this.tbOutput);
@@ -136,6 +146,8 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(1920, 260);
+            this.MinimumSize = new System.Drawing.Size(450, 260);
             this.Name = "WriterForm";
             this.Text = "Realtime Writer";
             this.ResumeLayout(false);
@@ -154,6 +166,7 @@
         private System.Windows.Forms.TextBox tbOutput;
         private System.Windows.Forms.Button btnInput;
         private System.Windows.Forms.Button btnOutput;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

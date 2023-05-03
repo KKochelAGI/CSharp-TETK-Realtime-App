@@ -3,6 +3,7 @@ using System.IO;
 using System.Windows.Forms;
 using Implementations;
 using Interfaces;
+using System.Xml;
 using Timer = System.Windows.Forms.Timer;
 
 namespace RealTimeWriter
@@ -18,6 +19,74 @@ namespace RealTimeWriter
         public WriterForm()
         {
             InitializeComponent();
+            LoadIniFile();
+        }
+
+        private void DisposeComponents()
+        {
+            WriteIniFile();
+        }
+
+        private void LoadIniFile()
+        {
+            try
+            {
+                string dir = Directory.GetCurrentDirectory();
+                string fil = Path.Combine(dir, "RealtimeWriter.ini");
+                if (File.Exists(fil))
+                {
+                    using (StreamReader sr = new StreamReader(fil))
+                    {
+                        string name = null;
+                        XmlReader reader = XmlReader.Create(sr);
+                        while (reader.Read())
+                        {
+                            switch (reader.NodeType)
+                            {
+                                case XmlNodeType.Element:
+                                    name = reader.Name;
+                                    break;
+                                case XmlNodeType.Text:
+                                    if (name == "tbInput")
+                                        tbInput.Text = reader.Value;
+                                    if (name == "tbOutput")
+                                        tbOutput.Text = reader.Value;
+                                    break;
+                                case XmlNodeType.EndElement:
+                                    break;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Reading .ini file problem\n" + e.Message, @"File not open",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void WriteIniFile()
+        {
+            try
+            {
+                string dir = Directory.GetCurrentDirectory();
+                string fil = Path.Combine(dir, "RealtimeWriter.ini");
+                if (File.Exists(fil))
+                    File.Delete(fil);
+                using (StreamWriter sw = new StreamWriter(fil))
+                {
+                    sw.WriteLine("<RealtimeWriter>");
+                    sw.WriteLine("<tbInput>" + tbInput.Text + "</tbInput>");
+                    sw.WriteLine("<tbOutput>" + tbOutput.Text + "</tbOutput>");
+                    sw.WriteLine("</RealtimeWriter>");
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Writing .ini file problem\n" + e.Message, @"File not available",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -85,5 +154,16 @@ namespace RealTimeWriter
                 }
             }
         }
+
+        private void tbInput_Hover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(tbInput, tbInput.Text);
+        }
+
+        private void tbOutput_Hover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(tbOutput, tbOutput.Text);
+        }
+
     }
 }

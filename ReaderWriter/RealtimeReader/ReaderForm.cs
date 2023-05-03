@@ -439,5 +439,24 @@ namespace RealtimeReader
             }
         }
 
+        private void tbInput_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(tbInput, tbInput.Text);
+        }
+
+        private void tbColumnData_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(tbColumnData, tbColumnData.Text);
+        }
+
+        private void tbData_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(tbData, tbData.Text);
+        }
+
+        private void tbSave_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(tbSave, tbSave.Text);
+        }
     }
 }

@@ -1,0 +1,9 @@
+C:\Users\kkochel\Documents\GitHub\CSharp-TETK-Realtime-App\ReaderWriter\Implementations\bin\Release\Implementations.dll
+C:\Users\kkochel\Documents\GitHub\CSharp-TETK-Realtime-App\ReaderWriter\Implementations\bin\Release\Implementations.pdb
+C:\Users\kkochel\Documents\GitHub\CSharp-TETK-Realtime-App\ReaderWriter\Implementations\bin\Release\Interfaces.dll
+C:\Users\kkochel\Documents\GitHub\CSharp-TETK-Realtime-App\ReaderWriter\Implementations\bin\Release\Interfaces.pdb
+C:\Users\kkochel\Documents\GitHub\CSharp-TETK-Realtime-App\ReaderWriter\Implementations\obj\Release\Implementations.csproj.AssemblyReference.cache
+C:\Users\kkochel\Documents\GitHub\CSharp-TETK-Realtime-App\ReaderWriter\Implementations\obj\Release\Implementations.csproj.CoreCompileInputs.cache
+C:\Users\kkochel\Documents\GitHub\CSharp-TETK-Realtime-App\ReaderWriter\Implementations\obj\Release\Implementations.csproj.CopyComplete
+C:\Users\kkochel\Documents\GitHub\CSharp-TETK-Realtime-App\ReaderWriter\Implementations\obj\Release\Implementations.dll
+C:\Users\kkochel\Documents\GitHub\CSharp-TETK-Realtime-App\ReaderWriter\Implementations\obj\Release\Implementations.pdb
