@@ -24,6 +24,8 @@ namespace Implementations
 
         public void WriteData()
         {
+            int numberOfLines = 5000;
+
             try
             {
                 if (!_mut.WaitOne(10000)) return;
@@ -43,7 +45,7 @@ namespace Implementations
                         while (_read.Peek() >= 0)
                         {
                             streamWriter.WriteLine(_read.ReadLine());
-                            if (++cnt > 100)
+                            if (++cnt > numberOfLines + 1) // Value here sets how many lines of data are read per time interval set on line 17 in WriterForm.cs
                                 break;
                         }
 
@@ -60,10 +62,10 @@ namespace Implementations
 
                 _mut.ReleaseMutex();
 
-                if (_read.Peek() < 0)
-                {
-                    OnWriterFinished(this, EventArgs.Empty);
-                }
+                //if (_read.Peek() < 0)
+                //{
+                //    OnWriterFinished(this, EventArgs.Empty);
+                //}
             }
             catch (AbandonedMutexException ex)
             {

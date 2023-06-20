@@ -1,6 +1,5 @@
 C:\Users\kkochel\Documents\GitHub\CSharp-TETK-Realtime-App\ReaderWriter\Interfaces\bin\Release\Interfaces.dll
 C:\Users\kkochel\Documents\GitHub\CSharp-TETK-Realtime-App\ReaderWriter\Interfaces\bin\Release\Interfaces.pdb
-C:\Users\kkochel\Documents\GitHub\CSharp-TETK-Realtime-App\ReaderWriter\Interfaces\obj\Release\Interfaces.csproj.AssemblyReference.cache
 C:\Users\kkochel\Documents\GitHub\CSharp-TETK-Realtime-App\ReaderWriter\Interfaces\obj\Release\Interfaces.csproj.CoreCompileInputs.cache
 C:\Users\kkochel\Documents\GitHub\CSharp-TETK-Realtime-App\ReaderWriter\Interfaces\obj\Release\Interfaces.dll
 C:\Users\kkochel\Documents\GitHub\CSharp-TETK-Realtime-App\ReaderWriter\Interfaces\obj\Release\Interfaces.pdb

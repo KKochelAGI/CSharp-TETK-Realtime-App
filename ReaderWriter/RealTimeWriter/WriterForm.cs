@@ -14,7 +14,7 @@ namespace RealTimeWriter
         
         private IDataWriter _dataWriter;
         private const string CsvFilter = "CSV (*.csv)|*.csv|All Files (*.*)|*.*";
-        private const int TimerIntervalMs = 2000;
+        private const int TimerIntervalMs = 1000;
 
         public WriterForm()
         {
@@ -113,7 +113,7 @@ namespace RealTimeWriter
                 catch (Exception ex)
                 {
                     _timer.Stop();
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Exception");
                 }
             };
             _timer.Start();
@@ -122,13 +122,20 @@ namespace RealTimeWriter
         private void DataWriterOnWriterFinished(object sender, EventArgs e)
         {
             _timer.Stop();
-            MessageBox.Show(@"Finished", @"Finished writing", MessageBoxButtons.OK);
+            MessageBox.Show(@"Finished writing!", @"Real-time Writer", MessageBoxButtons.OK);
         }
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-            _timer.Stop();
-            ((IDisposable)_dataWriter).Dispose();
+            try
+            {
+                _timer.Stop();
+                ((IDisposable)_dataWriter).Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " Writer was likely never started.", "Exception");
+            }
         }
 
         private void btnInput_Click(object sender, EventArgs e)
