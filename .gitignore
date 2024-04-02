@@ -1,0 +1,16 @@
+
+/ReaderWriter/Implementations/bin
+/ReaderWriter/Implementations/obj
+ReaderWriter/.vs/ReaderWriter/v16/.suo
+/ReaderWriter/Interfaces/bin
+/ReaderWriter/Interfaces/obj
+/ReaderWriter/RealtimeReader/bin
+/ReaderWriter/RealtimeReader/obj
+*.suo
+*.user
+bin
+obj
+ReaderWriter/Implementations/obj/Debug/Implementations.dll
+ReaderWriter/Implementations/obj/Debug/Implementations.dll
+/ReaderWriter/.vs/ReaderWriter/FileContentIndex
+/ReaderWriter/.vs
