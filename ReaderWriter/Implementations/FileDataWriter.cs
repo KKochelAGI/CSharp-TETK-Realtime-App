@@ -22,9 +22,9 @@ namespace Implementations
             _mut = new Mutex(false, "TE_Mutex");
         }
 
-        public void WriteData()
+        public void WriteData(int dataRefreshSpeed, int dataRate)
         {
-            int numberOfLines = 5000;
+            int numberOfLines = dataRefreshSpeed * dataRate;
 
             try
             {
@@ -79,6 +79,7 @@ namespace Implementations
                 throw new ApplicationException("Exception occurred in FileDataWriter.WriteData", ex);
             }
         }
+
 
         protected virtual void OnWriterFinished(object sender, EventArgs e)
         {

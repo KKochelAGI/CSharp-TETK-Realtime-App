@@ -30,7 +30,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WriterForm));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,22 +40,19 @@
             this.btnInput = new System.Windows.Forms.Button();
             this.btnOutput = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbDataRate = new System.Windows.Forms.TextBox();
+            this.tbDataRefreshSpeed = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbSpeedMultiplier = new System.Windows.Forms.TextBox();
+            this.pbDataRate = new System.Windows.Forms.PictureBox();
+            this.pbDataRefreshSpeed = new System.Windows.Forms.PictureBox();
+            this.pbSpeedMultiplier = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDataRate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDataRefreshSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSpeedMultiplier)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(332, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Realtime Writer will read a .csv file and write to a new file every 2 sec";
             // 
             // button1
             // 
@@ -63,7 +60,7 @@
             this.button1.Location = new System.Drawing.Point(72, 179);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 30);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 6;
             this.button1.Text = "Start";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnStart_Click);
@@ -74,7 +71,7 @@
             this.button2.Location = new System.Drawing.Point(178, 179);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 30);
-            this.button2.TabIndex = 2;
+            this.button2.TabIndex = 7;
             this.button2.Text = "Stop";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.btnStop_Click);
@@ -115,7 +112,7 @@
             this.tbOutput.Location = new System.Drawing.Point(72, 153);
             this.tbOutput.Name = "tbOutput";
             this.tbOutput.Size = new System.Drawing.Size(368, 20);
-            this.tbOutput.TabIndex = 6;
+            this.tbOutput.TabIndex = 5;
             this.tbOutput.Text = "*File_to_write_to*";
             // 
             // btnInput
@@ -124,7 +121,8 @@
             this.btnInput.Location = new System.Drawing.Point(446, 117);
             this.btnInput.Name = "btnInput";
             this.btnInput.Size = new System.Drawing.Size(26, 23);
-            this.btnInput.TabIndex = 7;
+            this.btnInput.TabIndex = 0;
+            this.btnInput.TabStop = false;
             this.btnInput.Text = "...";
             this.btnInput.UseVisualStyleBackColor = true;
             this.btnInput.Click += new System.EventHandler(this.btnInput_Click);
@@ -135,24 +133,32 @@
             this.btnOutput.Location = new System.Drawing.Point(446, 150);
             this.btnOutput.Name = "btnOutput";
             this.btnOutput.Size = new System.Drawing.Size(26, 23);
-            this.btnOutput.TabIndex = 8;
+            this.btnOutput.TabIndex = 0;
+            this.btnOutput.TabStop = false;
             this.btnOutput.Text = "...";
             this.btnOutput.UseVisualStyleBackColor = true;
             this.btnOutput.Click += new System.EventHandler(this.btnOutput_Click);
             // 
-            // textBox1
+            // toolTip1
             // 
-            this.textBox1.Location = new System.Drawing.Point(161, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(106, 20);
-            this.textBox1.TabIndex = 9;
+            this.toolTip1.AutoPopDelay = 30000;
+            this.toolTip1.InitialDelay = 500;
+            this.toolTip1.ReshowDelay = 100;
             // 
-            // textBox2
+            // tbDataRate
             // 
-            this.textBox2.Location = new System.Drawing.Point(161, 60);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(106, 20);
-            this.textBox2.TabIndex = 10;
+            this.tbDataRate.Location = new System.Drawing.Point(161, 34);
+            this.tbDataRate.Name = "tbDataRate";
+            this.tbDataRate.Size = new System.Drawing.Size(106, 20);
+            this.tbDataRate.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.tbDataRate, "TESTY");
+            // 
+            // tbDataRefreshSpeed
+            // 
+            this.tbDataRefreshSpeed.Location = new System.Drawing.Point(161, 60);
+            this.tbDataRefreshSpeed.Name = "tbDataRefreshSpeed";
+            this.tbDataRefreshSpeed.Size = new System.Drawing.Size(106, 20);
+            this.tbDataRefreshSpeed.TabIndex = 2;
             // 
             // label4
             // 
@@ -162,6 +168,7 @@
             this.label4.Size = new System.Drawing.Size(78, 13);
             this.label4.TabIndex = 11;
             this.label4.Text = "Data Rate (Hz)";
+            this.toolTip1.SetToolTip(this.label4, "TTTTTTYYY");
             // 
             // label5
             // 
@@ -181,24 +188,65 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "x Speed Multiplier";
             // 
-            // textBox3
+            // tbSpeedMultiplier
             // 
-            this.textBox3.Location = new System.Drawing.Point(161, 85);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(106, 20);
-            this.textBox3.TabIndex = 14;
+            this.tbSpeedMultiplier.Location = new System.Drawing.Point(161, 85);
+            this.tbSpeedMultiplier.Name = "tbSpeedMultiplier";
+            this.tbSpeedMultiplier.Size = new System.Drawing.Size(106, 20);
+            this.tbSpeedMultiplier.TabIndex = 3;
+            this.tbSpeedMultiplier.Text = "1";
+            // 
+            // pbDataRate
+            // 
+            this.pbDataRate.Image = ((System.Drawing.Image)(resources.GetObject("pbDataRate.Image")));
+            this.pbDataRate.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbDataRate.InitialImage")));
+            this.pbDataRate.Location = new System.Drawing.Point(273, 34);
+            this.pbDataRate.Name = "pbDataRate";
+            this.pbDataRate.Size = new System.Drawing.Size(20, 20);
+            this.pbDataRate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDataRate.TabIndex = 15;
+            this.pbDataRate.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbDataRate, "Set the data rate to match the data rate in the input file.");
+            // 
+            // pbDataRefreshSpeed
+            // 
+            this.pbDataRefreshSpeed.Image = ((System.Drawing.Image)(resources.GetObject("pbDataRefreshSpeed.Image")));
+            this.pbDataRefreshSpeed.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbDataRefreshSpeed.InitialImage")));
+            this.pbDataRefreshSpeed.Location = new System.Drawing.Point(273, 60);
+            this.pbDataRefreshSpeed.Name = "pbDataRefreshSpeed";
+            this.pbDataRefreshSpeed.Size = new System.Drawing.Size(20, 20);
+            this.pbDataRefreshSpeed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDataRefreshSpeed.TabIndex = 16;
+            this.pbDataRefreshSpeed.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbDataRefreshSpeed, "Set the rate in seconds at which you want the input file to be incrementally read" +
+        " and pushed to the output file.");
+            // 
+            // pbSpeedMultiplier
+            // 
+            this.pbSpeedMultiplier.Image = ((System.Drawing.Image)(resources.GetObject("pbSpeedMultiplier.Image")));
+            this.pbSpeedMultiplier.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbSpeedMultiplier.InitialImage")));
+            this.pbSpeedMultiplier.Location = new System.Drawing.Point(273, 85);
+            this.pbSpeedMultiplier.Name = "pbSpeedMultiplier";
+            this.pbSpeedMultiplier.Size = new System.Drawing.Size(20, 20);
+            this.pbSpeedMultiplier.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSpeedMultiplier.TabIndex = 17;
+            this.pbSpeedMultiplier.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbSpeedMultiplier, resources.GetString("pbSpeedMultiplier.ToolTip"));
             // 
             // WriterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 221);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.pbSpeedMultiplier);
+            this.Controls.Add(this.pbDataRefreshSpeed);
+            this.Controls.Add(this.pbDataRate);
+            this.Controls.Add(this.tbSpeedMultiplier);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbDataRefreshSpeed);
+            this.Controls.Add(this.tbDataRate);
             this.Controls.Add(this.btnOutput);
             this.Controls.Add(this.btnInput);
             this.Controls.Add(this.tbOutput);
@@ -207,19 +255,19 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
             this.MaximumSize = new System.Drawing.Size(1920, 260);
             this.MinimumSize = new System.Drawing.Size(450, 260);
             this.Name = "WriterForm";
             this.Text = "Realtime Writer";
+            ((System.ComponentModel.ISupportInitialize)(this.pbDataRate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDataRefreshSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSpeedMultiplier)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
@@ -229,12 +277,15 @@
         private System.Windows.Forms.Button btnInput;
         private System.Windows.Forms.Button btnOutput;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbDataRate;
+        private System.Windows.Forms.TextBox tbDataRefreshSpeed;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbSpeedMultiplier;
+        private System.Windows.Forms.PictureBox pbDataRate;
+        private System.Windows.Forms.PictureBox pbDataRefreshSpeed;
+        private System.Windows.Forms.PictureBox pbSpeedMultiplier;
     }
 }
 

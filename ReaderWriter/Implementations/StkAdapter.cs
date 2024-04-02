@@ -210,6 +210,7 @@ namespace Implementations
             lines.Add("NumberOfAttitudePoints 2");
             lines.Add("InterpolationOrder   1");
             lines.Add("CentralBody Earth");
+            lines.Add("CoordinateAxes ICRF");
             lines.Add("Sequence             321");
             lines.Add("TimeFormat ISO-YD");
             lines.Add("AttitudeTimeEulerAngles");

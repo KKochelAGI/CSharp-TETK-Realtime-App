@@ -216,9 +216,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(10, 68);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 13);
+            this.label6.Size = new System.Drawing.Size(85, 13);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Data Definitions";
+            this.label6.Text = "Data Definitions:";
             // 
             // btnBrowseColumnData
             // 

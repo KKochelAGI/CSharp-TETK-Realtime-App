@@ -14,7 +14,7 @@ namespace RealTimeWriter
         
         private IDataWriter _dataWriter;
         private const string CsvFilter = "CSV (*.csv)|*.csv|All Files (*.*)|*.*";
-        private const int TimerIntervalMs = 1000;
+        //private const int TimerIntervalMs = 1000; // the speed at which new data is read from the input file
 
         public WriterForm()
         {
@@ -91,6 +91,32 @@ namespace RealTimeWriter
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            int TimerIntervalMs; // the speed at which new data is read from the input file
+
+            if (!int.TryParse(tbDataRate.Text, out int dataRate))
+            {
+                MessageBox.Show(@"Data rate input is not a valid integer.", @"Input Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!int.TryParse(tbDataRefreshSpeed.Text, out int dataRefreshSpeed))
+            {
+                MessageBox.Show(@"Data refresh speed input is not a valid integer.", @"Input Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!int.TryParse(tbSpeedMultiplier.Text, out int speedMultiplier))
+            {
+                MessageBox.Show(@"Speed multiplier input is not a valid integer.", @"Input Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+
+
             // Read 500 lines at a time and append them to the output file
             //  using a named Mutex to synchronize with the reader.
             // It will open and close the file each time
@@ -101,6 +127,7 @@ namespace RealTimeWriter
                 return;
             }
 
+            TimerIntervalMs = dataRefreshSpeed * 1000 / speedMultiplier; // * 1000 so time is in milliseconds
             _dataWriter = new FileDataWriter(tbInput.Text,tbOutput.Text);
             _dataWriter.WriterFinished += DataWriterOnWriterFinished;
             _timer = new Timer {Interval = TimerIntervalMs};
@@ -108,7 +135,7 @@ namespace RealTimeWriter
             {
                 try
                 {
-                    _dataWriter.WriteData();
+                    _dataWriter.WriteData(dataRefreshSpeed, dataRate);
                 }
                 catch (Exception ex)
                 {
