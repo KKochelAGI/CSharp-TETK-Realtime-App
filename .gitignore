@@ -14,3 +14,7 @@ ReaderWriter/Implementations/obj/Debug/Implementations.dll
 ReaderWriter/Implementations/obj/Debug/Implementations.dll
 /ReaderWriter/.vs/ReaderWriter/FileContentIndex
 /ReaderWriter/.vs
+/ReaderWriter/Implementations/.vs
+/ReaderWriter/Interfaces/.vs
+/ReaderWriter/RealtimeReader/.vs
+/ReaderWriter/RealTimeWriter/.vs
